@@ -3,9 +3,5 @@
         "email":"UshaRanjith@gmail.com",
         "password":"usha"
 
-    },
-    "invalid":{
-        "email":"pavis@gmail.com",
-        "password":"usha"
     }
 }

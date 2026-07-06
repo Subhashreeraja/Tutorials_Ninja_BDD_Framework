@@ -12,5 +12,9 @@ Then the user is able to view dashboard page
 
 Scenario:Invalid login
 And the user enters invalid login email and password 
+|email              |password  |
+|testpqrst@gmail.com|Testsss123|
 When the login is clicked
 Then the user receives an error message 
+
+  

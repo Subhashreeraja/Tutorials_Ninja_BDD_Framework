@@ -24,10 +24,12 @@ export class LoginPage extends Basepage{
         await this.click(this.loginlink);
     }
 
-    async enterdatas(email:string,password:string){
+    
+    async enterdatas(email: string, password: string) {
         await this.email.fill(email);
         await this.password.fill(password);
     }
+    
     async clickLoginbtn() {
         await this.loginbtn.click();
 
@@ -40,7 +42,6 @@ export class LoginPage extends Basepage{
      await expect (this.warningtxt).toContainText("Warning");
         
     }
-
 
 
     }

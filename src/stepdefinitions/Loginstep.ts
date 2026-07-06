@@ -1,6 +1,6 @@
 
 import { logger } from "../utils/winstonLogger";
- import{Given,When,Then} from "@cucumber/cucumber";
+ import{Given,When,Then, DataTable} from "@cucumber/cucumber";
 import { CustomWorld } from "../world/world";
  import {expect} from "@playwright/test";
  import Logindata from "../../testdata/Logindata.json"
@@ -35,14 +35,12 @@ Then('the user is able to view dashboard page', async function (this:CustomWorld
  
 });
 
-Given('the user enters invalid login email and password', async function (this:CustomWorld) {
-  await this.loginPage.enterdatas(
-    Logindata.invalid.email,
-    Logindata.invalid.password
-
-  );
+Given('the user enters invalid login email and password', async function (this:CustomWorld,dataTable) {
+  const data=dataTable.hashes()[0];
+  await this.loginPage.enterdatas(data.email,data.password);
   logger.info("Entered invalid datas");
 });
+
 
 Then('the user receives an error message',{timeout:30000} ,async function (this:CustomWorld) {
   await this.loginPage.Warningmsg();
