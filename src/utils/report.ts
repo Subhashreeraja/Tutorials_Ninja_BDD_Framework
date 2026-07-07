@@ -1,24 +1,30 @@
 const report = require("multiple-cucumber-html-reporter");
+
 report.generate({
   jsonDir: "reports",
   reportPath: "reports/html",
-  reportName: "Playwright BDD Report",
-  pageTitle: "BookCart App test report",
+  reportName: "Tutorials Ninja BDD Report",
+  pageTitle: "Tutorials Ninja Test Report",
   displayDuration: false,
+
   metadata: {
     browser: {
-      name: "chrome",
-      version: "118",
+      name: "Chromium",
+      version: "Latest"
     },
-device: "Subha- Machine",
+    device: "Jenkins Machine",
     platform: {
       name: "Windows",
-      version: "11",
-    },
+      version: "11"
+    }
   },
+
   customData: {
-    title: "Test info",
+    title: "Execution Information",
     data: [
-      { label: "Project", value: "Book Cart Project" },
-      { label: "Release", value: "1.2.3" },
-      { label: "Cycle", value: "Smoke-1" },      ],    },  });
+      { label: "Project", value: "Tutorials Ninja BDD Framework" },
+      { label: "Framework", value: "Playwright + Cucumber + TypeScript" },
+      { label: "Execution", value: "Jenkins CI/CD" }
+    ]
+  }
+});
